@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: garantizado
+spec:
+  containers:
+  - name: contendor
+    image: nginx
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "64Mi"
+        cpu : "250m"
+    

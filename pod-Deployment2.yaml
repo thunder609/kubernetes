@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels: 
+        app: nginx
+    spec:  
+      containers:
+      - name: contendor
+        image: nginx:1.14.1
+        ports:
+        - containerPort: 80
+      
